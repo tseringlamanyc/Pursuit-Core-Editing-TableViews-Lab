@@ -8,14 +8,24 @@
 
 import Foundation
 
-//enum State: CaseIterable {
-//    case purchased
-//    case notpurchased
-//}
+
 
 struct Grocery {
     
+    enum State: CaseIterable {
+        case purchased
+        case notpurchased
+    }
+    
     var name: String
-    var price: Double
+    var price: String
+    var state: State
+    
+    static func createList() -> [Grocery] {
+        return [
+            Grocery(name: "iPhone", price: "320.0", state: .purchased)
+        ]
+        
+    }
     
 }

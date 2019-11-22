@@ -21,14 +21,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        datas = Grocery.createList()
     }
 
     @IBAction func addItem (_ segue: UIStoryboardSegue) {
         guard let vc = segue.source as? AddItemViewController, let addItem = vc.data else {
             fatalError()
         }
+        datas.insert(addItem, at: 0)
     }
-
 }
 
 extension ViewController: UITableViewDataSource {
@@ -56,7 +57,7 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
         let item = datas[indexPath.row]
         cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.price.description
+        cell.detailTextLabel?.text = "$\(item.price.description)"
         return cell
     }
 }
