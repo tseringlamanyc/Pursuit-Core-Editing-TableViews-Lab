@@ -15,11 +15,11 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var priceItem: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
-    var data: Grocery?
+    var grocery: Grocery?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = Grocery(name: "nil", price: "0.0", state: .notpurchased)
+        grocery = Grocery(name: "nil", price: "0.0")
         nameItem.delegate = self
         priceItem.delegate = self
     }
@@ -30,9 +30,9 @@ extension AddItemViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         if textField == nameItem {
-        data?.name = nameItem.text ?? "Nil"
+        grocery?.name = nameItem.text ?? "Nil"
         } else if textField == priceItem {
-        data?.price = priceItem.text ?? "0.0"
+        grocery?.price = priceItem.text ?? "0.0"
         }
         return true
     }

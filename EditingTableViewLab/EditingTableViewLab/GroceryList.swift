@@ -19,11 +19,12 @@ struct Grocery {
     
     var name: String
     var price: String
-    var state: State
+//    var state: State
     
     static func createList() -> [Grocery] {
         return [
-            Grocery(name: "iPhone", price: "320.0", state: .purchased)
+            Grocery(name: "iPhone", price: "320.0"),
+            Grocery(name: "Potato", price: "10.0")
         ]
         
     }

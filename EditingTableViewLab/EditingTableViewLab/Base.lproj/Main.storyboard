@@ -56,6 +56,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="9pC-jY-zsX">
+                        <barButtonItem key="leftBarButtonItem" title="Remove" id="xRb-tA-SS6">
+                            <connections>
+                                <action selector="removeItems:" destination="BYZ-38-t0r" id="WSb-Yx-WQw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="9dd-8W-AMa">
                             <connections>
                                 <segue destination="RiS-zC-dlb" kind="show" id="fA6-pj-TDD"/>
